@@ -1,284 +1,865 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="A stunning, responsive portfolio showcasing modern web design and development skills">
-    <title>Responsive Portfolio | Advanced CSS3 Design</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <!-- Navigation Header -->
-    <header class="header">
-        <nav class="navbar">
-            <div class="logo">
-                <a href="#home">Portfolio</a>
-            </div>
-            <button class="theme-toggle" aria-label="Toggle dark mode" title="Toggle Theme">
-                <span class="theme-icon">🌙</span>
-            </button>
-            <ul class="nav-menu">
-                <li><a href="#home" class="nav-link">Home</a></li>
-                <li><a href="#about" class="nav-link">About</a></li>
-                <li><a href="#projects" class="nav-link">Projects</a></li>
-                <li><a href="#skills" class="nav-link">Skills</a></li>
-                <li><a href="#contact" class="nav-link">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+Checking the current stylesheet so I can give you the exact CSS content without altering your HTML.
 
-    <!-- Main Content -->
-    <main>
-        <!-- Hero Section -->
-        <section id="home" class="hero">
-            <div class="hero-content">
-                <h1 class="hero-title">Welcome to My Portfolio</h1>
-                <p class="hero-subtitle">Crafting beautiful, responsive web experiences</p>
-                <a href="#projects" class="cta-button">Explore My Work</a>
-            </div>
-            <div class="hero-shape"></div>
-        </section>
+Read [](file:///c%3A/Users/Sri%20K/styles.css)
 
-        <!-- About Section -->
-        <section id="about" class="about">
-            <div class="container">
-                <h2 class="section-title">About Me</h2>
-                <div class="about-grid">
-                    <div class="about-text">
-                        <p>I'm a passionate web developer dedicated to creating beautiful, functional, and responsive websites. With expertise in modern CSS3, responsive design, and semantic HTML, I transform ideas into stunning digital experiences.</p>
-                        <p>My approach focuses on user-centered design, performance optimization, and accessibility standards to ensure every project exceeds expectations.</p>
-                    </div>
-                    <div class="about-highlights">
-                        <div class="highlight-card">
-                            <h3>Responsive Design</h3>
-                            <p>Mobile-first approach with flawless cross-device compatibility</p>
-                        </div>
-                        <div class="highlight-card">
-                            <h3>Modern CSS3</h3>
-                            <p>Advanced layouts with Grid, Flexbox, and custom animations</p>
-                        </div>
-                        <div class="highlight-card">
-                            <h3>Performance</h3>
-                            <p>Optimized code for lightning-fast load times</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+I found the stylesheet; fetching the remaining lines to ensure the full CSS is provided exactly.
 
-        <!-- Projects Section -->
-        <section id="projects" class="projects">
-            <div class="container">
-                <h2 class="section-title">Featured Projects</h2>
-                <div class="projects-grid">
-                    <article class="project-card">
-                        <div class="project-image" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);"></div>
-                        <div class="project-content">
-                            <h3>E-Commerce Platform</h3>
-                            <p>A fully responsive e-commerce solution with advanced filtering and dynamic product galleries</p>
-                            <div class="tech-stack">
-                                <span class="tech-tag">HTML5</span>
-                                <span class="tech-tag">CSS3</span>
-                                <span class="tech-tag">Responsive</span>
-                            </div>
-                            <a href="#" class="project-link">View Project →</a>
-                        </div>
-                    </article>
+Read [](file:///c%3A/Users/Sri%20K/styles.css)
 
-                    <article class="project-card">
-                        <div class="project-image" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);"></div>
-                        <div class="project-content">
-                            <h3>Dashboard UI Kit</h3>
-                            <p>Modern analytics dashboard with interactive charts and mobile-responsive design</p>
-                            <div class="tech-stack">
-                                <span class="tech-tag">CSS Grid</span>
-                                <span class="tech-tag">Flexbox</span>
-                                <span class="tech-tag">Dark Mode</span>
-                            </div>
-                            <a href="#" class="project-link">View Project →</a>
-                        </div>
-                    </article>
+Read [](file:///c%3A/Users/Sri%20K/styles.css)
 
-                    <article class="project-card">
-                        <div class="project-image" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);"></div>
-                        <div class="project-content">
-                            <h3>Blog Platform</h3>
-                            <p>Content-rich blog with advanced typography and optimized reading experience</p>
-                            <div class="tech-stack">
-                                <span class="tech-tag">Semantic HTML</span>
-                                <span class="tech-tag">Typography</span>
-                                <span class="tech-tag">Mobile</span>
-                            </div>
-                            <a href="#" class="project-link">View Project →</a>
-                        </div>
-                    </article>
+```css
+/* ==========================================
+   CSS3 ADVANCED RESPONSIVE PORTFOLIO
+   Mobile-First Approach with CSS Grid & Flexbox
+   ========================================== */
 
-                    <article class="project-card">
-                        <div class="project-image" style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);"></div>
-                        <div class="project-content">
-                            <h3>Portfolio Generator</h3>
-                            <p>Tool for creating custom, responsive portfolios with pre-built templates</p>
-                            <div class="tech-stack">
-                                <span class="tech-tag">CSS Variables</span>
-                                <span class="tech-tag">Customizable</span>
-                                <span class="tech-tag">Fast</span>
-                            </div>
-                            <a href="#" class="project-link">View Project →</a>
-                        </div>
-                    </article>
+/* ==========================================
+   1. CSS CUSTOM PROPERTIES (VARIABLES)
+   ========================================== */
 
-                    <article class="project-card">
-                        <div class="project-image" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);"></div>
-                        <div class="project-content">
-                            <h3>SaaS Landing Page</h3>
-                            <p>High-converting landing page with smooth animations and mobile optimization</p>
-                            <div class="tech-stack">
-                                <span class="tech-tag">Animations</span>
-                                <span class="tech-tag">Conversion</span>
-                                <span class="tech-tag">Responsive</span>
-                            </div>
-                            <a href="#" class="project-link">View Project →</a>
-                        </div>
-                    </article>
+:root {
+    /* Light Theme Colors */
+    --primary-color: #667eea;
+    --secondary-color: #764ba2;
+    --accent-color: #f093fb;
+    --text-primary: #1a1a1a;
+    --text-secondary: #666666;
+    --bg-primary: #ffffff;
+    --bg-secondary: #f7f7f7;
+    --bg-tertiary: #efefef;
+    --border-color: #e0e0e0;
+    
+    /* Light Theme Shadows */
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.08);
+    --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.12);
+    --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.15);
+    --shadow-xl: 0 12px 24px rgba(0, 0, 0, 0.2);
+    
+    /* Spacing System */
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 1.5rem;
+    --spacing-lg: 2rem;
+    --spacing-xl: 3rem;
+    --spacing-2xl: 4rem;
+    
+    /* Border Radius */
+    --radius-sm: 0.25rem;
+    --radius-md: 0.5rem;
+    --radius-lg: 1rem;
+    --radius-xl: 1.5rem;
+    --radius-full: 9999px;
+    
+    /* Typography */
+    --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --font-mono: 'Courier New', monospace;
+    --font-weight-regular: 400;
+    --font-weight-medium: 500;
+    --font-weight-semibold: 600;
+    --font-weight-bold: 700;
+    
+    /* Line Heights */
+    --line-height-tight: 1.2;
+    --line-height-normal: 1.6;
+    --line-height-relaxed: 1.8;
+    
+    /* Transitions */
+    --transition-fast: 150ms ease-in-out;
+    --transition-base: 300ms ease-in-out;
+    --transition-slow: 500ms ease-in-out;
+    
+    /* Z-Index Scale */
+    --z-dropdown: 100;
+    --z-sticky: 200;
+    --z-fixed: 300;
+    --z-modal: 400;
+}
 
-                    <article class="project-card">
-                        <div class="project-image" style="background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);"></div>
-                        <div class="project-content">
-                            <h3>Component Library</h3>
-                            <p>Reusable CSS components and patterns for rapid development</p>
-                            <div class="tech-stack">
-                                <span class="tech-tag">Modular</span>
-                                <span class="tech-tag">Accessible</span>
-                                <span class="tech-tag">Scalable</span>
-                            </div>
-                            <a href="#" class="project-link">View Project →</a>
-                        </div>
-                    </article>
-                </div>
-            </div>
-        </section>
+/* Dark Theme */
+html[data-theme="dark"] {
+    --text-primary: #ffffff;
+    --text-secondary: #b0b0b0;
+    --bg-primary: #1a1a1a;
+    --bg-secondary: #2a2a2a;
+    --bg-tertiary: #3a3a3a;
+    --border-color: #444444;
+    
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.3);
+    --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.4);
+    --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.5);
+    --shadow-xl: 0 12px 24px rgba(0, 0, 0, 0.6);
+}
 
-        <!-- Skills Section -->
-        <section id="skills" class="skills">
-            <div class="container">
-                <h2 class="section-title">Skills & Expertise</h2>
-                <div class="skills-grid">
-                    <div class="skill-category">
-                        <h3>Frontend Development</h3>
-                        <ul class="skill-list">
-                            <li>HTML5 Semantics</li>
-                            <li>Advanced CSS3</li>
-                            <li>Responsive Design</li>
-                            <li>CSS Grid & Flexbox</li>
-                            <li>CSS Animations</li>
-                        </ul>
-                    </div>
-                    <div class="skill-category">
-                        <h3>Design Systems</h3>
-                        <ul class="skill-list">
-                            <li>Color Theory</li>
-                            <li>Typography</li>
-                            <li>Layout Principles</li>
-                            <li>Component Design</li>
-                            <li>Accessibility (WCAG)</li>
-                        </ul>
-                    </div>
-                    <div class="skill-category">
-                        <h3>Performance</h3>
-                        <ul class="skill-list">
-                            <li>Web Performance</li>
-                            <li>Image Optimization</li>
-                            <li>Critical Rendering Path</li>
-                            <li>SEO Best Practices</li>
-                            <li>Mobile Optimization</li>
-                        </ul>
-                    </div>
-                    <div class="skill-category">
-                        <h3>Tools & Workflow</h3>
-                        <ul class="skill-list">
-                            <li>Git & Version Control</li>
-                            <li>Browser DevTools</li>
-                            <li>Code Editors</li>
-                            <li>Build Tools</li>
-                            <li>Responsive Testing</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
+/* ==========================================
+   2. GLOBAL STYLES & RESET
+   ========================================== */
 
-        <!-- Contact Section -->
-        <section id="contact" class="contact">
-            <div class="container">
-                <h2 class="section-title">Get In Touch</h2>
-                <div class="contact-content">
-                    <p class="contact-intro">I'm always interested in hearing about new projects and opportunities. Let's create something amazing together!</p>
-                    <form class="contact-form" action="#" method="POST">
-                        <div class="form-group">
-                            <input type="text" placeholder="Your Name" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="email" placeholder="Your Email" required>
-                        </div>
-                        <div class="form-group">
-                            <textarea placeholder="Your Message" rows="5" required></textarea>
-                        </div>
-                        <button type="submit" class="submit-button">Send Message</button>
-                    </form>
-                </div>
-            </div>
-        </section>
-    </main>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2024 My Portfolio. Designed with ❤️ using advanced CSS3.</p>
-            <div class="social-links">
-                <a href="#" aria-label="GitHub">GitHub</a>
-                <a href="#" aria-label="LinkedIn">LinkedIn</a>
-                <a href="#" aria-label="Twitter">Twitter</a>
-            </div>
-        </div>
-    </footer>
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+    scroll-padding-top: 60px;
+}
 
-    <script>
-        // Dark Mode Toggle
-        const themeToggle = document.querySelector('.theme-toggle');
-        const themeIcon = document.querySelector('.theme-icon');
-        const htmlElement = document.documentElement;
+body {
+    font-family: var(--font-family);
+    color: var(--text-primary);
+    background-color: var(--bg-primary);
+    line-height: var(--line-height-normal);
+    transition: background-color var(--transition-base),
+                color var(--transition-base);
+    overflow-x: hidden;
+}
 
-        // Check for saved theme preference or default to light
-        const savedTheme = localStorage.getItem('theme') || 'light';
-        htmlElement.setAttribute('data-theme', savedTheme);
-        updateThemeIcon(savedTheme);
+/* ==========================================
+   3. TYPOGRAPHY
+   ========================================== */
 
-        themeToggle.addEventListener('click', () => {
-            const currentTheme = htmlElement.getAttribute('data-theme');
-            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-            
-            htmlElement.setAttribute('data-theme', newTheme);
-            localStorage.setItem('theme', newTheme);
-            updateThemeIcon(newTheme);
-        });
+h1, h2, h3, h4, h5, h6 {
+    font-weight: var(--font-weight-bold);
+    line-height: var(--line-height-tight);
+    margin-bottom: var(--spacing-sm);
+}
 
-        function updateThemeIcon(theme) {
-            themeIcon.textContent = theme === 'light' ? '🌙' : '☀️';
-        }
+h1 {
+    font-size: 2.5rem;
+}
 
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-    </script>
-</body>
-</html>
+h2 {
+    font-size: 2rem;
+}
+
+h3 {
+    font-size: 1.5rem;
+}
+
+h4 {
+    font-size: 1.25rem;
+}
+
+p {
+    margin-bottom: var(--spacing-md);
+    color: var(--text-secondary);
+}
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color var(--transition-base);
+}
+
+a:hover {
+    color: var(--secondary-color);
+}
+
+/* ==========================================
+   4. UTILITY CLASSES
+   ========================================== */
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+}
+
+/* ==========================================
+   5. HEADER & NAVIGATION
+   ========================================== */
+
+.header {
+    position: sticky;
+    top: 0;
+    z-index: var(--z-sticky);
+    background-color: var(--bg-primary);
+    border-bottom: 1px solid var(--border-color);
+    backdrop-filter: blur(10px);
+    background-color: rgba(255, 255, 255, 0.95);
+    transition: all var(--transition-base);
+}
+
+html[data-theme="dark"] .header {
+    background-color: rgba(26, 26, 26, 0.95);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--spacing-md) 0;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-left: var(--spacing-md);
+    padding-right: var(--spacing-md);
+}
+
+.logo a {
+    font-size: 1.5rem;
+    font-weight: var(--font-weight-bold);
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: var(--spacing-lg);
+    align-items: center;
+}
+
+.nav-link {
+    position: relative;
+    font-weight: var(--font-weight-medium);
+    color: var(--text-primary);
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    transition: width var(--transition-base);
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* Theme Toggle Button */
+.theme-toggle {
+    background: var(--bg-secondary);
+    border: none;
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border-radius: var(--radius-full);
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: background-color var(--transition-base);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.theme-toggle:hover {
+    background-color: var(--bg-tertiary);
+}
+
+/* ==========================================
+   6. HERO SECTION
+   ========================================== */
+
+.hero {
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: center;
+    min-height: 90vh;
+    padding: var(--spacing-2xl) var(--spacing-md);
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    z-index: 2;
+}
+
+.hero-title {
+    font-size: clamp(2rem, 8vw, 4rem);
+    color: #ffffff;
+    margin-bottom: var(--spacing-md);
+    animation: fadeInDown 0.8s ease-out;
+}
+
+.hero-subtitle {
+    font-size: clamp(1rem, 3vw, 1.5rem);
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: var(--spacing-xl);
+    animation: fadeInUp 0.8s ease-out 0.2s both;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: var(--spacing-md) var(--spacing-xl);
+    background-color: #ffffff;
+    color: var(--primary-color);
+    border-radius: var(--radius-full);
+    font-weight: var(--font-weight-bold);
+    transition: all var(--transition-base);
+    box-shadow: var(--shadow-lg);
+    animation: fadeInUp 0.8s ease-out 0.4s both;
+}
+
+.cta-button:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-xl);
+}
+
+/* Hero Shape Animation */
+.hero-shape {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+    bottom: -50px;
+    right: -50px;
+    animation: float 6s ease-in-out infinite;
+    z-index: 1;
+}
+
+/* ==========================================
+   7. SECTION STYLES
+   ========================================== */
+
+section {
+    padding: var(--spacing-2xl) var(--spacing-md);
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: var(--spacing-2xl);
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    margin: var(--spacing-sm) auto 0;
+    border-radius: var(--radius-full);
+}
+
+/* ==========================================
+   8. ABOUT SECTION
+   ========================================== */
+
+.about {
+    background-color: var(--bg-secondary);
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--spacing-2xl);
+    align-items: start;
+}
+
+.about-text p {
+    font-size: 1.1rem;
+    line-height: var(--line-height-relaxed);
+    margin-bottom: var(--spacing-lg);
+}
+
+.about-highlights {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--spacing-lg);
+}
+
+.highlight-card {
+    padding: var(--spacing-lg);
+    background-color: var(--bg-primary);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    transition: all var(--transition-base);
+    border-left: 4px solid var(--primary-color);
+}
+
+.highlight-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+}
+
+.highlight-card h3 {
+    color: var(--primary-color);
+    margin-bottom: var(--spacing-sm);
+}
+
+/* ==========================================
+   9. PROJECTS SECTION (CSS GRID)
+   ========================================== */
+
+.projects {
+    background-color: var(--bg-primary);
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-xl);
+}
+
+.project-card {
+    display: grid;
+    grid-template-rows: 200px 1fr;
+    background-color: var(--bg-secondary);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    transition: all var(--transition-base);
+}
+
+.project-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-xl);
+}
+
+.project-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: relative;
+    overflow: hidden;
+}
+
+.project-image::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.3);
+    transition: opacity var(--transition-base);
+}
+
+.project-card:hover .project-image::after {
+    opacity: 0.1;
+}
+
+.project-content {
+    padding: var(--spacing-lg);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.project-content h3 {
+    color: var(--primary-color);
+    margin-bottom: var(--spacing-sm);
+}
+
+.project-content p {
+    font-size: 0.95rem;
+    margin-bottom: var(--spacing-md);
+    flex-grow: 1;
+}
+
+.tech-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-xs);
+    margin-bottom: var(--spacing-md);
+}
+
+.tech-tag {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    background-color: var(--bg-tertiary);
+    color: var(--text-secondary);
+    border-radius: var(--radius-full);
+    font-size: 0.8rem;
+    font-weight: var(--font-weight-medium);
+}
+
+.project-link {
+    display: inline-block;
+    color: var(--primary-color);
+    font-weight: var(--font-weight-bold);
+    position: relative;
+}
+
+.project-link::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--primary-color);
+    transition: width var(--transition-base);
+}
+
+.project-link:hover::after {
+    width: 100%;
+}
+
+/* ==========================================
+   10. SKILLS SECTION (FLEXBOX)
+   ========================================== */
+
+.skills {
+    background-color: var(--bg-secondary);
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--spacing-xl);
+}
+
+.skill-category {
+    background-color: var(--bg-primary);
+    padding: var(--spacing-lg);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    transition: all var(--transition-base);
+}
+
+.skill-category:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+    border-top: 3px solid var(--primary-color);
+}
+
+.skill-category h3 {
+    color: var(--primary-color);
+    margin-bottom: var(--spacing-md);
+    font-size: 1.1rem;
+}
+
+.skill-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+}
+
+.skill-list li {
+    padding-left: var(--spacing-md);
+    position: relative;
+    color: var(--text-secondary);
+}
+
+.skill-list li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--primary-color);
+    font-weight: var(--font-weight-bold);
+}
+
+/* ==========================================
+   11. CONTACT SECTION
+   ========================================== */
+
+.contact {
+    background: linear-gradient(135deg, var(--bg-secondary), var(--bg-tertiary));
+}
+
+.contact-content {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.contact-intro {
+    text-align: center;
+    font-size: 1.1rem;
+    margin-bottom: var(--spacing-xl);
+}
+
+.contact-form {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--spacing-lg);
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group input,
+.form-group textarea {
+    padding: var(--spacing-md);
+    border: 2px solid var(--border-color);
+    border-radius: var(--radius-md);
+    font-family: var(--font-family);
+    font-size: 1rem;
+    color: var(--text-primary);
+    background-color: var(--bg-primary);
+    transition: all var(--transition-base);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.submit-button {
+    padding: var(--spacing-md) var(--spacing-xl);
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: #ffffff;
+    border: none;
+    border-radius: var(--radius-md);
+    font-weight: var(--font-weight-bold);
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all var(--transition-base);
+    box-shadow: var(--shadow-md);
+}
+
+.submit-button:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
+
+.submit-button:active {
+    transform: translateY(0);
+}
+
+/* ==========================================
+   12. FOOTER
+   ========================================== */
+
+.footer {
+    background-color: var(--bg-secondary);
+    border-top: 1px solid var(--border-color);
+    padding: var(--spacing-xl) var(--spacing-md);
+    text-align: center;
+}
+
+.footer .container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--spacing-lg);
+}
+
+.footer p {
+    color: var(--text-secondary);
+    margin: 0;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-lg);
+}
+
+.social-links a {
+    display: inline-block;
+    padding: var(--spacing-xs) var(--spacing-md);
+    border-radius: var(--radius-md);
+    background-color: var(--bg-tertiary);
+    transition: all var(--transition-base);
+    font-weight: var(--font-weight-medium);
+}
+
+.social-links a:hover {
+    background-color: var(--primary-color);
+    color: #ffffff;
+}
+
+/* ==========================================
+   13. ANIMATIONS & KEYFRAMES
+   ========================================== */
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(20px);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* ==========================================
+   14. RESPONSIVE DESIGN (MOBILE-FIRST)
+   ========================================== */
+
+/* Tablet - 768px and up */
+@media (min-width: 768px) {
+    h1 {
+        font-size: 3rem;
+    }
+
+    h2 {
+        font-size: 2.5rem;
+    }
+
+    .about-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: var(--spacing-2xl);
+    }
+
+    .about-highlights {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .projects-grid {
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    }
+
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .contact-form {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .contact-form textarea {
+        grid-column: 1 / -1;
+    }
+
+    .submit-button {
+        grid-column: 1 / -1;
+    }
+
+    .footer .container {
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+    }
+}
+
+/* Desktop - 1024px and up */
+@media (min-width: 1024px) {
+    h1 {
+        font-size: 3.5rem;
+    }
+
+    section {
+        padding: var(--spacing-2xl) var(--spacing-lg);
+    }
+
+    .nav-menu {
+        gap: var(--spacing-xl);
+    }
+
+    .projects-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .skills-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/* Large Desktop - 1440px and up */
+@media (min-width: 1440px) {
+    .container {
+        max-width: 1320px;
+    }
+
+    h1 {
+        font-size: 4rem;
+    }
+}
+
+/* ==========================================
+   15. ACCESSIBILITY & PRINT
+   ========================================== */
+
+/* Focus visible for keyboard navigation */
+*:focus-visible {
+    outline: 3px solid var(--primary-color);
+    outline-offset: 2px;
+}
+
+/* Reduced motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* Print styles */
+@media print {
+    .header,
+    .hero-shape,
+    .contact-form,
+    .theme-toggle {
+        display: none;
+    }
+
+    body {
+        background-color: white;
+        color: black;
+    }
+
+    a {
+        color: #0066cc;
+    }
+
+    section {
+        page-break-inside: avoid;
+        padding: 1rem;
+    }
+}
+
+/* ==========================================
+   16. UTILITY ANIMATIONS
+   ========================================== */
+
+.fade-in {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+.slide-in {
+    animation: slideInRight 0.6s ease-out;
+}
+
+/* Smooth scrolling enhancement */
+html {
+    scroll-behavior: smooth;
+}
+
+/* ==========================================
+   END OF STYLESHEET
+   ========================================== */
+```
