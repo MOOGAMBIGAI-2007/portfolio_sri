@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Responsive Portfolio | Advanced CSS3</title>
+  <style>
+    :root {
+      --bg: #0f172a;
+      --surface: rgba(15, 23, 42, 0.95);
+      --surface-strong: rgba(15, 23, 42, 0.98);
+      --card: rgba(148, 163, 184, 0.12);
+      --text: #f8fafc;
+      --text-muted: #cbd5e1;
+      --accent: #38bdf8;
+      --accent-soft: rgba(56, 189, 248, 0.18);
+      --border: rgba(148, 163, 184, 0.18);
+      --shadow: 0 24px 80px rgba(15, 23, 42, 0.35);
+      --radius: 1.5rem;
+      --max-width: 1200px;
+      --transition: 250ms ease;
+    }
+
+    .dark {
+      --bg: #f8fafc;
+      --surface: rgba(255, 255, 255, 0.96);
+      --surface-strong: rgba(255, 255, 255, 0.99);
+      --card: rgba(15, 23, 42, 0.08);
+      --text: #0f172a;
+      --text-muted: #475569;
+      --accent: #2563eb;
+      --accent-soft: rgba(37, 99, 235, 0.18);
+      --border: rgba(15, 23, 42, 0.12);
+      --shadow: 0 20px 50px rgba(15, 23, 42, 0.15);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+    }
+
+    body {
+      min-height: 100vh;
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top left, rgba(56, 189, 248, 0.16), transparent 25%),
+        radial-gradient(circle at bottom right, rgba(139, 92, 246, 0.14), transparent 22%),
+        linear-gradient(180deg, #020617 0%, var(--bg) 100%);
+      color: var(--text);
+      line-height: 1.6;
+      min-width: 320px;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(18px);
+      background: rgba(15, 23, 42, 0.72);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 1rem clamp(1rem, 4vw, 2rem);
+      max-width: var(--max-width);
+      margin: 0 auto;
+    }
+
+    .brand {
+      font-weight: 800;
+      letter-spacing: -0.05em;
+      font-size: 1.05rem;
+      color: var(--accent);
+    }
+
+    nav {
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    nav a {
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: color var(--transition);
+      font-weight: 500;
+    }
+
+    nav a:hover,
+    nav a:focus-visible {
+      color: var(--text);
+    }
+
+    .theme-toggle {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 2.6rem;
+      height: 2.6rem;
+      border-radius: 1rem;
+      border: 1px solid var(--border);
+      color: var(--text);
+      background: var(--surface);
+      cursor: pointer;
+      transition: transform var(--transition), background var(--transition);
+    }
+
+    .theme-toggle:hover {
+      transform: translateY(-1px);
+    }
+
+    main {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 3rem;
+      width: min(100%, calc(var(--max-width) + 4rem));
+      margin: 0 auto;
+      padding: 2rem 1.25rem 3rem;
+    }
+
+    .hero {
+      display: grid;
+      gap: 2rem;
+      align-items: center;
+      padding: 2.5rem;
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      background: var(--surface);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at top left, rgba(56, 189, 248, 0.2), transparent 28%),
+        radial-gradient(circle at bottom right, rgba(168, 85, 247, 0.12), transparent 24%);
+      pointer-events: none;
+      opacity: 0.9;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      gap: 1.5rem;
+    }
+
+    .hero h1 {
+      font-size: clamp(2rem, 5vw, 3.6rem);
+      line-height: 1.05;
+      letter-spacing: -0.03em;
+    }
+
+    .hero p {
+      max-width: 55ch;
+      color: var(--text-muted);
+      font-size: 1.05rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.95rem 1.5rem;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      font-weight: 700;
+      cursor: pointer;
+      transition: transform var(--transition), background var(--transition), border-color var(--transition);
+      text-decoration: none;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent), #7c3aed);
+      color: #fff;
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--text);
+      border-color: var(--border);
+    }
+
+    .hero-visual {
+      position: relative;
+      min-height: 260px;
+      border-radius: 2rem;
+      overflow: hidden;
+      background: linear-gradient(180deg, rgba(56, 189, 248, 0.23), rgba(124, 58, 237, 0.18));
+      display: grid;
+      place-items: center;
+      box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.04);
+    }
+
+    .hero-visual .mockup {
+      width: min(360px, 100%);
+      aspect-ratio: 4 / 3;
+      display: grid;
+      gap: 0.9rem;
+      padding: 1.2rem;
+      border-radius: 2rem;
+      background: rgba(15, 23, 42, 0.8);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: 0 20px 60px rgba(15, 23, 42, 0.3);
+      align-content: space-between;
+    }
+
+    .mockup span {
+      display: block;
+      height: 0.85rem;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.22);
+    }
+
+    .hero-grid {
+      display: grid;
+      gap: 1rem;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .hero-card {
+      border-radius: 1.5rem;
+      background: rgba(15, 23, 42, 0.72);
+      border: 1px solid rgba(255, 255, 255, 0.07);
+      padding: 1.35rem;
+      box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.02);
+      display: grid;
+      gap: 0.75rem;
+    }
+
+    .hero-card strong {
+      font-size: 0.95rem;
+      color: var(--text);
+    }
+
+    .hero-card span {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    .section-title {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .section-title::before {
+      content: "";
+      width: 2.5rem;
+      height: 2px;
+      background: var(--accent);
+      border-radius: 999px;
+    }
+
+    .section-title h2 {
+      font-size: 1.75rem;
+      color: var(--text);
+    }
+
+    .section-title p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    .content-card {
+      border-radius: 2rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      padding: 2rem;
+    }
+
+    .about {
+      display: grid;
+      gap: 2rem;
+      align-items: center;
+      grid-template-columns: 1fr;
+    }
+
+    .about-grid {
+      display: grid;
+      gap: 1.5rem;
+      grid-template-columns: minmax(220px, 360px) 1fr;
+      align-items: center;
+    }
+
+    .profile-card {
+      border-radius: 2rem;
+      padding: 2rem;
+      background: linear-gradient(180deg, rgba(56, 189, 248, 0.12), rgba(124, 58, 237, 0.10));
+      border: 1px solid rgba(255, 255, 255, 0.07);
+      display: grid;
+      gap: 1rem;
+      align-items: center;
+    }
+
+    .profile-avatar {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      border-radius: 2rem;
+      background: linear-gradient(135deg, rgba(56, 189, 248, 0.22), rgba(124, 58, 237, 0.22));
+      display: grid;
+      place-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .profile-avatar::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.35), transparent 28%);
+    }
+
+    .profile-avatar span {
+      position: relative;
+      z-index: 1;
+      width: 5rem;
+      height: 5rem;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent), #8b5cf6);
+      display: grid;
+      place-items: center;
+      font-size: 1.5rem;
+      color: #fff;
+      font-weight: 700;
+    }
+
+    .profile-meta {
+      display: grid;
+      gap: 0.45rem;
+    }
+
+    .skills {
+      display: grid;
+      gap: 1rem;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    }
+
+    .skill-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.9rem 1rem;
+      border-radius: 1.25rem;
+      background: rgba(148, 163, 184, 0.08);
+      color: var(--text);
+      font-size: 0.95rem;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .projects {
+      display: grid;
+      gap: 1.5rem;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    }
+
+    .project-card {
+      border-radius: 2rem;
+      padding: 1.5rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      box-shadow: 0 20px 60px rgba(15, 23, 42, 0.12);
+      display: grid;
+      gap: 1rem;
+      transition: transform var(--transition), box-shadow var(--transition);
+    }
+
+    .project-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 30px 80px rgba(15, 23, 42, 0.18);
+    }
+
+    .project-card header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .project-card p {
+      color: var(--text-muted);
+      font-size: 0.98rem;
+    }
+
+    .badge {
+      padding: 0.45rem 0.75rem;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-size: 0.85rem;
+      font-weight: 700;
+      align-self: start;
+    }
+
+    .contact {
+      display: grid;
+      gap: 1.5rem;
+      grid-template-columns: minmax(260px, 380px) 1fr;
+    }
+
+    .contact-card {
+      display: grid;
+      gap: 1rem;
+      padding: 2rem;
+      border-radius: 2rem;
+      background: linear-gradient(180deg, rgba(56, 189, 248, 0.1), rgba(124, 58, 237, 0.1));
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .contact-form {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .input-group {
+      display: grid;
+      gap: 0.5rem;
+    }
+
+    label {
+      font-size: 0.95rem;
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      border: 1px solid var(--border);
+      border-radius: 1.2rem;
+      background: rgba(15, 23, 42, 0.82);
+      color: var(--text);
+      padding: 1rem 1.1rem;
+      font: inherit;
+      resize: vertical;
+      min-height: 3rem;
+    }
+
+    input:focus,
+    textarea:focus {
+      outline: 2px solid rgba(56, 189, 248, 0.45);
+      outline-offset: 2px;
+      border-color: rgba(56, 189, 248, 0.45);
+    }
+
+    footer {
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      padding: 1.5rem 0 3rem;
+    }
+
+    footer a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    @media (min-width: 900px) {
+      main {
+        padding-top: 3rem;
+      }
+
+      .hero {
+        grid-template-columns: 1.1fr 0.9fr;
+      }
+
+      .hero-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+      }
+
+      .about {
+        grid-template-columns: 1fr;
+      }
+
+      .about-grid {
+        grid-template-columns: 360px minmax(0, 1fr);
+      }
+
+      .contact {
+        grid-template-columns: 370px minmax(0, 1fr);
+      }
+    }
+
+    @media (max-width: 760px) {
+      .topbar {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      nav {
+        justify-content: center;
+      }
+
+      .hero {
+        padding: 1.75rem;
+      }
+
+      .hero-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .about-grid,
+      .contact {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-visual {
+        min-height: 220px;
+      }
+    }
+
+    @media (max-width: 520px) {
+      html {
+        font-size: 14px;
+      }
+
+      .topbar {
+        padding: 1rem;
+      }
+
+      .hero {
+        border-radius: 1.5rem;
+      }
+
+      .hero h1 {
+        font-size: 2.4rem;
+      }
+
+      .hero-actions {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .btn {
+        width: 100%;
+      }
+
+      .project-card {
+        padding: 1.25rem;
+      }
+    }
+  </style>
+</head>
+<body class="light">
+  <header>
+    <div class="topbar">
+      <a href="#home" class="brand">PROTO<span style="color: var(--text);">FILE</span></a>
+      <nav aria-label="Primary">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle light and dark theme">🌗</button>
+    </div>
+  </header>
+
+  <main>
+    <section id="home" class="hero">
+      <div class="hero-content">
+        <span class="section-title"><h2>Hi, I’m Sri</h2></span>
+        <h1>Designing responsive portfolio experiences with CSS Grid & modern UI systems.</h1>
+        <p>Build elegant, fast-loading websites that look stunning on any screen. This responsive portfolio demonstrates advanced layout architecture using CSS Grid, Flexbox, and theme-aware styling.</p>
+
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#projects">View Work</a>
+          <a class="btn btn-secondary" href="#contact">Let’s Talk</a>
+        </div>
+      </div>
+
+      <div class="hero-visual" aria-hidden="true">
+        <div class="mockup">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="about">
+      <div class="content-card">
+        <div class="section-title">
+          <h2>About Me</h2>
+        </div>
+        <p>I build semantic and accessible front-end experiences with a focus on performance, polished animation, and strong visual systems. Every layout is crafted mobile-first and scales gracefully from small phones to widescreen displays.</p>
+        <div class="hero-grid">
+          <div class="hero-card">
+            <strong>Responsive by default</strong>
+            <span>All sections adapt using fluid grids, clamp-based sizing, and mobile-first breakpoints.</span>
+          </div>
+          <div class="hero-card">
+            <strong>Semantic structure</strong>
+            <span>Using proper HTML5 sections, headings, and accessible navigation ensures best practices.</span>
+          </div>
+          <div class="hero-card">
+            <strong>Modern styling</strong>
+            <span>Custom variables, glassmorphism, soft shadows, and precise spacing create a polished UI.</span>
+          </div>
+          <div class="hero-card">
+            <strong>Dark mode ready</strong>
+            <span>Dynamic theme variables let the page switch appearance seamlessly.</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="profile-card">
+        <div class="profile-avatar"><span>SK</span></div>
+        <div class="profile-meta">
+          <p style="font-size: 1.05rem; font-weight: 700;">Creative web architect</p>
+          <p>Focused on clean layouts, pixel-perfect presentation, and a strong mobile-first design system.</p>
+        </div>
+        <div class="skills">
+          <span class="skill-pill">CSS Grid</span>
+          <span class="skill-pill">Flexbox</span>
+          <span class="skill-pill">Responsive UI</span>
+          <span class="skill-pill">Theme design</span>
+          <span class="skill-pill">Accessibility</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="section-title">
+        <h2>Featured Projects</h2>
+      </div>
+      <div class="projects">
+        <article class="project-card">
+          <header>
+            <div>
+              <h3>Grid-powered dashboard</h3>
+              <p>Responsive analytics UI with modular cards and adaptive columns.</p>
+            </div>
+            <span class="badge">UI</span>
+          </header>
+          <p>Built with CSS Grid and responsive track sizing for a robust dashboard experience across desktop and tablet.</p>
+        </article>
+
+        <article class="project-card">
+          <header>
+            <div>
+              <h3>Portfolio landing page</h3>
+              <p>Modern hero layout with progressive scaling and fluid typography.</p>
+            </div>
+            <span class="badge">Landing</span>
+          </header>
+          <p>A lightweight, semantic page optimized for speed and clarity, with clear calls-to-action and polished spacing.</p>
+        </article>
+
+        <article class="project-card">
+          <header>
+            <div>
+              <h3>Dark mode theme system</h3>
+              <p>Variable-driven color palette that switches instantly.</p>
+            </div>
+            <span class="badge">Design</span>
+          </header>
+          <p>Custom CSS variables let the interface change between themes without layout shifts or rewrites.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="contact" class="contact">
+      <aside class="contact-card">
+        <div class="section-title">
+          <h2>Contact Me</h2>
+        </div>
+        <p>Have a project idea or want to collaborate? Send a message and let’s build something beautiful together.</p>
+        <p><strong>Email:</strong> hello@example.com</p>
+      </aside>
+
+      <form class="contact-form" action="#" method="post">
+        <div class="input-group">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" placeholder="Your name" />
+        </div>
+        <div class="input-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="you@example.com" />
+        </div>
+        <div class="input-group">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="5" placeholder="Tell me about your project"></textarea>
+        </div>
+        <button class="btn btn-primary" type="submit">Send Message</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    Crafted with CSS Grid, Flexbox, and fully responsive architecture. © 2026 ProtoFile.
+  </footer>
+
+  <script>
+    const body = document.body;
+    const themeToggle = document.getElementById('themeToggle');
+
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark') {
+      body.classList.add('dark');
+    }
+
+    themeToggle.addEventListener('click', () => {
+      body.classList.toggle('dark');
+      const currentTheme = body.classList.contains('dark') ? 'dark' : 'light';
+      localStorage.setItem('theme', currentTheme);
+    });
+  </script>
+</body>
+</html>
